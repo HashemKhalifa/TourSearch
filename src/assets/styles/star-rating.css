@@ -1,0 +1,20 @@
+/**
+    Rating stars style
+ */
+.rating_stars {
+    position: relative;
+    float: left;
+    margin-top: 0.8rem;
+}
+.rating_stars li{
+    display: inline-flex;
+    margin-bottom: 0;
+}
+.star_rating_list{
+    color: #d3d3d4;
+}
+.star_rating_list_active{
+    color: #f6c343;
+    position: absolute;
+    top: 0;
+}

@@ -1,0 +1,20 @@
+.tour-details{
+    position: relative;
+    max-width: 700px;
+    margin: 1.5rem auto 0 auto;
+}
+.tour-details h4{
+    color: #3c3c3c;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.tour-details li{
+    margin-bottom: 0.8rem;
+}
+.error{
+    color: #D0021B;
+}
+.error:hover{
+    border-left: 0;
+    padding-left: 0;
+}

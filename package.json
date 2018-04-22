@@ -1,0 +1,92 @@
+{
+  "name": "@HashemKhalifa/TourSearch",
+  "version": "1.0.0",
+  "description": "Tour Search",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "format": "prettier --write 'packages/**/*.js'",
+    "test": "jest --watchAll --coverage",
+    "precommit": "pretty-quick --staged"
+  },
+  "jest": {
+    "automock": false,
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ]
+  },
+  "repository": "https://github.com/HashemKhalifa/TourSearch",
+  "author": "HashemKhalifa",
+  "license": "ISC",
+  "private": false,
+  "engines": {
+    "node": ">=8",
+    "npm": ">=3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-solid": "^5.0.10",
+    "@fortawesome/react-fontawesome": "^0.0.18",
+    "history": "^4.7.2",
+    "lodash": "^4.17.5",
+    "prop-types": "15.6.1",
+    "react": "16.3.1",
+    "react-dom": "16.3.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.44",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.44",
+    "@babel/plugin-transform-runtime": "7.0.0-beta.44",
+    "@babel/polyfill": "7.0.0-beta.44",
+    "@babel/preset-env": "7.0.0-beta.44",
+    "@babel/preset-react": "7.0.0-beta.44",
+    "@babel/register": "7.0.0-beta.44",
+    "@babel/runtime": "7.0.0-beta.44",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "8.2.2",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "8.0.0-beta.2",
+    "babel-plugin-lodash": "3.3.2",
+    "babel-preset-stage-2": "7.0.0-beta.3",
+    "css-loader": "^0.28.10",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.4.2",
+    "jest-enzyme": "^6.0.0",
+    "pretty-quick": "^1.4.1",
+    "react-hot-loader": "^4.0.0",
+    "style-loader": "^0.20.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  }
+}
