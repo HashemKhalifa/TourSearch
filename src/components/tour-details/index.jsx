@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { CAPcase } from '../../helpers.js';
 import style from '../../assets/styles/tour-details.css';
 import { setSearchString } from '../../store/actions';
-import TourItem from './tour-item'
+import TourItem from './tour-item';
 
 class TourDetails extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class TourDetails extends Component {
     const { searchResult } = this.props;
     return (
       <div className={style['tour-details']} data-test="tour-details">
-        {this.props.searchResult.length ? (
+        {searchResult.length ? (
           searchResult.map(item => (
             <TourItem key={CAPcase(item.title)} {...item} />
           ))
@@ -33,7 +33,19 @@ class TourDetails extends Component {
 }
 
 TourDetails.propTypes = {
-  title: PropTypes.string,
+  searchResult: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    currency: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    isSpecialOffer: PropTypes.bool,
+  })),
+  setSearchString: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      query: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({

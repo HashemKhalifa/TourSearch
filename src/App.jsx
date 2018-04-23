@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, HashRouter } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 
 import { Provider } from 'react-redux';

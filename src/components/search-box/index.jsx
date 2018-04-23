@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { setSearchString } from '../../store/actions';
 import style from '../../assets/styles/search-box.css';
 
-
 class SearchBox extends Component {
   /**
    *
@@ -28,6 +27,7 @@ class SearchBox extends Component {
   };
 
   render() {
+    const { searchResult, searchString } = this.props;
     return (
       <div className={style.search_container}>
         <input
@@ -36,13 +36,13 @@ class SearchBox extends Component {
           placeholder="Where you are going?"
           className={style.search_input}
           onChange={this.handleOnInputChange}
-          value={this.props.searchString}
+          value={searchString}
           type="text" />
         <FontAwesomeIcon className={style.search_icon} icon={faSearch} />
         <ul className={style.search_result}>
           {this.props.searchResult.slice(0, 6).map(link => (
             <li key={link.title} data-test="search-result-item">
-              <Link to={'/' + this.props.searchString}>
+              <Link to={'/' + searchString}>
                 {link.title}
                 {link.isSpecialOffer && (
                   <span className={style.discount_flag}>10% off</span>
@@ -50,8 +50,8 @@ class SearchBox extends Component {
               </Link>
             </li>
           ))}
-          {this.props.searchResult.length <= 0 &&
-            this.props.searchString && (
+          {searchResult.length <= 0 &&
+            searchString && (
             <li className={style.error} data-test="search-empty">
                 Sorry no result matched your search
             </li>
